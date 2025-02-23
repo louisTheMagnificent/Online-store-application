@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+// Define the package
+package warehouse;
+
+// Define the WarehouseService
+service WarehouseService {
+
+  // Method to get aggregated stock by customer and product
+  rpc GetAggregatedStockByCustomerAndProduct (EmptyRequest) returns (AggregatedStockResponse);
+
+  // Method to get product stock details by product ID and customer ID
+  rpc GetProductStockByProductIdAndCustomerId (ProductCustomerRequest) returns (ProductStockDetails);
+
+
+}
+
+// Empty request message
+message EmptyRequest {}
+
+// Request message containing productId and customerId
+message ProductCustomerRequest {
+  int64 productId = 1;   // ID of the product
+  int64 customerId = 2;  // ID of the customer (seller)
+}
+
+// Response for the aggregated stock by customer and product
+message AggregatedStockResponse {
+  repeated AggregatedStock aggregatedStocks = 1;  // List of aggregated stocks
+}
+
+// Message containing details about aggregated stock
+message AggregatedStock {
+  string productName = 1;  // Product name
+  int64 customerId = 2;    // Customer (seller) ID
+  int64 productId = 3;     // Product ID
+  int32 quantity = 4;      // Aggregated quantity of product in storage
+}
+
+
+
+// Message containing details about a single product's stock
+message ProductStockDetails {
+  int64 productId = 1;    // Product ID
+  string productName = 2; // Product name
+  string description = 3; // Product description
+  double price = 4;       // Product price
+  int32 quantity = 5;     // Total quantity of this product in storage for a specific customer
+}
+
+// Response for aggregated stock number
+message StockQuantityResponse {
+  int64 productId = 1;    // Product ID
+  int64 customerId = 2;   // Customer ID
+  int32 aggregatedQuantity = 3; // Aggregated stock number
+}

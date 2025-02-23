@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package warehouse;
+
+service StockModificationService {
+  rpc ModifyStock(ModifyStockRequest) returns (ModifyStockResponse);
+}
+
+message ModifyStockRequest {
+  int64 sellerId = 1;         // Customer or Seller ID
+  int64 productId = 2;        // Product ID of the stock to modify
+  int32 quantityToDeduct = 3; // Quantity to deduct from stock
+}
+
+message ModifyStockResponse {
+  bool success = 1;           // Whether the stock modification was successful
+}

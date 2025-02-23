@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package deliveryco;
+
+
+message OrderRequest {
+  int64 customer_id = 1;
+}
+
+message OrderResponse {
+  repeated OrderDao orders = 1;
+}
+
+message OrderDetailRequest {
+  int64 id = 1;
+}
+
+message OrderDetailResponse {
+  int64 id = 1;
+  int64 customer_id = 2;
+  string product_name = 3;
+  int32 item_quantities = 4;
+  double total_price = 5;
+  string time = 6; // Use appropriate timestamp format if needed
+  string status = 7;
+  bool show_cancel_btn = 8;
+}
+
+message OrderDao {
+  string product_name = 1;
+  int32 item_quantities = 2;
+  int64 customer_id = 3;
+  int64 id = 4;
+}
+
+// Define request message for canceling an order
+message CancelOrderRequest {
+  int64 order_id = 1;  // Order ID to be canceled
+}
+
+// Define response message for canceling an order
+message CancelOrderResponse {
+  bool success = 1; // True if the cancellation was successful
+}
+// Message for creating a new order
+message CreateOrderRequest {
+  int64 customerId = 1; // ID of the customer
+  int64 sellerId = 2;   // ID of the seller
+  string productName = 3; // Name of the product
+  int64 productId = 4;
+  int32 itemQuantities = 5; // Quantity of items
+  double totalPrice = 6; // Total price of the order
+}
+
+// Message for the response after creating an order
+message CreateOrderResponse {
+  bool success = 1; // Indicates whether the order was created successfully
+}
+
+service OrderService {
+  rpc FindAllOrdersByCustomerId(OrderRequest) returns (OrderResponse);
+  rpc FindOrderDetailById(OrderDetailRequest) returns (OrderDetailResponse);
+  rpc CancelOrder(CancelOrderRequest) returns (CancelOrderResponse);
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+}
