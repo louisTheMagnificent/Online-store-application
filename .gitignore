@@ -1,0 +1,36 @@
+# Vue
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/npm-debug.log
+frontend/yarn-error.log
+
+# Spring Boot
+backend/target/
+backend/.mvn/
+backend/logs/
+backend/.env
+backend/*.iml
+backend/*.log
+
+# Java & IDE
+*.class
+*.jar
+*.war
+*.ear
+*.sql
+*.swp
+
+# IDEA / Eclipse / VS Code
+.idea/
+*.ipr
+*.iws
+*.iml
+.vscode/
+*.project
+*.classpath
+*.settings/
+
+# System
+.DS_Store
+Thumbs.db
