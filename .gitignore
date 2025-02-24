@@ -18,7 +18,6 @@ backend/*.log
 *.jar
 *.war
 *.ear
-*.sql
 *.swp
 
 # IDEA / Eclipse / VS Code
