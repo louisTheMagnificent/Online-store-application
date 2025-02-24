@@ -1,0 +1,114 @@
+/* 让订单详情页面居中 */
+.order-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+}
+
+/* 订单详情卡片 */
+.order-card {
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* 订单标题 */
+.order-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* 订单信息 */
+.order-info {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* 订单状态 */
+.order-status {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 订单详情列表 */
+.order-items {
+    text-align: left;
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* 订单详情项 */
+.order-item {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* 订单操作按钮 */
+.order-action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* 取消订单按钮 */
+.cancel-order-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cancel-order-button:hover {
+    background-color: #c82333;
+}
+
+/* 返回订单列表按钮 */
+.back-button {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .order-card {
+        width: 95%;
+    }
+
+    .order-action-buttons {
+        flex-direction: column;
+    }
+
+    .cancel-order-button,
+    .back-button {
+        width: 100%;
+    }
+}

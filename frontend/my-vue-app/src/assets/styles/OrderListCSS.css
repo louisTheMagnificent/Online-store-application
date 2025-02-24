@@ -1,0 +1,154 @@
+/* 让整个订单列表可滚动，而不是整个页面 */
+.order-list-container {
+    width: 80vw;
+    max-width: 1800px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+/* 滚动条美化 */
+.order-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.order-list-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.order-list-container::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 10px;
+}
+
+/* 蓝色的 Go to Product List 按钮 */
+.go-to-product-button {
+    background-color: #007bff; /* 蓝色 */
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+}
+
+/* 悬浮时变深蓝 */
+.go-to-product-button:hover {
+    background-color: #0056b3;
+}
+
+/* 订单分组样式 */
+.order-section {
+    margin-bottom: 25px;
+    padding: 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f6f6f6, #e9ecef);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 订单标题 */
+.order-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* 订单列表 */
+.order-list {
+    display: flex;
+    flex-direction: column; /* 让订单垂直排列 */
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+}
+
+/* 订单卡片，每行一个订单 */
+.order-card {
+    width: 100%; /* 让每个订单占据整行 */
+    max-width: 800px; /* 限制最大宽度 */
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #e0e0e0;
+}
+
+/* 订单卡片悬浮效果 */
+.order-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 订单信息 */
+.order-info {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* 订单状态 */
+.order-status {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 按钮容器 */
+.order-action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* 查看订单详情按钮 */
+.view-order-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.view-order-button:hover {
+    background-color: #218838;
+}
+
+/* 订单为空的提示 */
+.no-orders {
+    font-size: 17px;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .order-card {
+        width: 95%;
+    }
+
+    .order-action-buttons {
+        flex-direction: column;
+    }
+
+    .cancel-button,
+    .view-order-button {
+        width: 100%;
+    }
+}

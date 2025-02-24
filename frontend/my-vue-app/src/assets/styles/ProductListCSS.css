@@ -1,0 +1,143 @@
+/* 让整个产品列表可滚动，而不是整个页面 */
+.product-list-container {
+    width: 80vw; /* 让它撑满浏览器 */
+    max-width: 1800px; /* 允许最大宽度 */
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+/* 滚动条美化 */
+.product-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.product-list-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.product-list-container::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 10px;
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* 卖家分组样式 */
+.seller-section {
+    margin-bottom: 25px;
+    padding: 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f6f6f6, #e9ecef);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 卖家名称 */
+.seller-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* 让同一个 seller 的产品最多一行显示 2 个 */
+.product-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    width: 100%;
+}
+
+/* 确保一行最多 2 个 */
+.product-card {
+    max-width: 600px; /* 限制最大宽度 */
+    min-width: 280px; /* 避免太小 */
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #e0e0e0;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 产品名称 */
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+/* 其他产品信息 */
+.product-info {
+    font-size: 15px;
+    color: #666;
+}
+
+/* 让 "Go to Order List" 按钮大小和 OrderListCSS 里的 .go-to-product-button 一样 */
+.order-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 16px; /* ✅ 让它和 orderlist 的 .go-to-product-button 一样 */
+    border: none;
+    border-radius: 6px;
+    font-size: 14px; /* ✅ 让它和 orderlist 的 .go-to-product-button 一样 */
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-block;
+    text-align: center;
+}
+
+.order-button:hover {
+    background-color: #0056b3;
+}
+
+/* 让 "View Details" 按钮大小和 orderlist 里的 .view-order-button 一样 */
+.view-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 14px; /* ✅ 让它和 orderlist 的 .view-order-button 一样 */
+    border: none;
+    border-radius: 6px;
+    font-size: 14px; /* ✅ 让它和 orderlist 的 .view-order-button 一样 */
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.view-button:hover {
+    background-color: #218838;
+}
+/* 没有产品时的提示 */
+.no-products {
+    font-size: 17px;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .product-card {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+}
