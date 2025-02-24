@@ -12,7 +12,7 @@ This is an online store application based on **Vue.js** and **Spring Boot**, inc
 - **ProductList and details & Placing order**
 - **OrderList and details & canceling order**
 
-## 🚀 技术栈
+## 🚀 Tech stack
 ### 🔹 **Frontend**
 - **Vue.js 2.6.14** - Main frontend framework
 - **Vue Router** - Handles routing (if used)
