@@ -5,12 +5,48 @@ This project was developed as part of a course assignment, where I primarily foc
 The backend APIs were predefined, meaning that some design limitations exist, and certain functionalities may not be fully optimized. 
 Thank you for your understanding.
 
+---
 
 ## 📌 Project Introduction
 This is an online store application based on **Vue.js** and **Spring Boot**, including:
 - **Login**
 - **ProductList and details & Placing order**
 - **OrderList and details & canceling order**
+
+---
+
+## 💻 My Part
+
+### 1. Frontend Framework Setup
+- Independently set up the **Vue 2 frontend framework** using Vue CLI.
+- Configured **vue.config.js** to optimize the development environment, adjusting the default port to `8085` to prevent conflicts.
+
+### 2. Component-Based Development
+- Designed and implemented **five Vue components**.
+- Leveraged Vue’s **component-based architecture** to enhance UI reusability and maintainability.
+
+### 3. Routing Management
+- Implemented **Vue Router** for frontend routing.
+- Mapped pages in **router/index.js** to support a **Single Page Application (SPA)**.
+
+### 4. API Integration
+- Integrated **Axios** for **RESTful API communication**.
+- Used `axios.get()` to fetch backend data and dynamically render it in Vue components.
+- Implemented **error handling mechanisms** to improve user experience.
+
+### 5. Styling & UI Optimization
+- Developed **custom CSS stylesheets** for **consistent UI design** and **responsiveness**.
+
+### 6. Project Lifecycle Management
+- Managed project lifecycle with **NPM scripts**:
+  - **`npm run serve`** → Launches the local development environment (port `8085`).
+  - **`npm run build`** → Generates production-ready code with optimized bundling.
+
+### 7. Database Initialization & Migrations
+- Implemented **automated database migrations** to **create tables and insert default data** on project startup.
+- Ensured **data structure integrity** and prepopulated essential records to facilitate a seamless application setup.
+
+---
 
 ## 🚀 Tech stack
 ### 🔹 **Frontend**
@@ -50,6 +86,8 @@ This is an online store application based on **Vue.js** and **Spring Boot**, inc
 ┃     ┗ 📂 src  
 ┣ 📜 README.md  
 ┗ 📜 .gitignore  
+
+---
 
 ## 🛠️ Environment Setup
 
@@ -107,6 +145,8 @@ This is an online store application based on **Vue.js** and **Spring Boot**, inc
   </dependency>
   ```
 
+---
+
 ## 🚀 How to Run the Project
 
 ### 1️⃣ Start the Backend (Spring Boot)
@@ -133,6 +173,8 @@ This is an online store application based on **Vue.js** and **Spring Boot**, inc
 2. Default username: customer, password: COMP5348
 3. Customer has 100 dollar.
 4. Order state is changed each 10 seconds and you can only cancel the order in the state "READY_FOR_PICKUP"
+
+---
 
 ## 📌 Contact
 
